@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.kevin</groupId>
+    <artifactId>fast-framework</artifactId>
+    <version>${revision}</version>
+    <name>fast-framework</name>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <revision>1.0-SNAPSHOT</revision>
+        <fast.framework.biz.version>1.0-SNAPSHOT</fast.framework.biz.version>
+        <fast.framework.biz.api.version>1.0-SNAPSHOT</fast.framework.biz.api.version>
+        <fast.framework.common.version>1.0-SNAPSHOT</fast.framework.common.version>
+        <fast.framework.web.version>1.0-SNAPSHOT</fast.framework.web.version>
+        <fast.framework.dependencies.version>1.0-SNAPSHOT</fast.framework.dependencies.version>
+    </properties>
+
+    <modules>
+        <module>fast-framework-dependencies</module>
+        <module>fast-framework-common</module>
+        <module>fast-framework-web</module>
+        <module>fast-framework-biz-api</module>
+        <module>fast-framework-biz</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.4.2</version>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.kevin</groupId>
+                <artifactId>fast-framework-dependencies</artifactId>
+                <version>${fast.framework.dependencies.version}</version>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>1.7.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.7.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
